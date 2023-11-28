@@ -1,0 +1,1 @@
+create table if not exists Person(id uuid primary key, first_name varchar, last_name varchar);

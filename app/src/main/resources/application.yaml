@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: person
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/person
+    username: test
+    password: test
+    properties:
+      sslMode: disable
