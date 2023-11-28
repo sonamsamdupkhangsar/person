@@ -9,15 +9,22 @@ Thre are 4 endpoints:
 
 
 
-1. POST to create a person by curl:
-   Query: `curl -X POST http://localhost:8080/persons -H "Content-Type: application/json" -d '{"firstName": "Tashi", "lastName": "Tsering"}'`
-   feedback: {"id":"a3b8e91a-3a9c-4b72-90c7-062b3079fc0e","firstName":"Tashi","lastName":"Tsering","new":true}%
+1. POST to create a person by curl: 
+```
+curl -X POST http://localhost:8080/persons -H "Content-Type: application/json" -d '{"firstName": "Tashi", "lastName": "Tsering"}'
+``` 
 
-2. PUT to update the person by curl:
-   Query:  `curl -X PUT http://localhost:8080/persons -H "Content-Type: application/json" -d '{"id": "9b1e29dc-cd4b-4c60-b436-9093189cd2b4", "firstName": "Tenzing", "lastName": "Lhamo"}'`
-   feedback: {"id":"a3b8e91a-3a9c-4b72-90c7-062b3079fc0e","firstName":"Tenzing","lastName":"Lhamo","new":false}
+2. PUT to update the person by curl: 
+```
+curl -X PUT http://localhost:8080/persons -H "Content-Type: application/json" -d '{"id": "9b1e29dc-cd4b-4c60-b436-9093189cd2b4", "firstName": "Tenzing", "lastName": "Lhamo"}'
+```
+   
 
 3. GET to retrieve by id:
-   `curl http://localhost:8080/persons/9b1e29dc-cd4b-4c60-b436-9093189cd2b4`
+```
+curl http://localhost:8080/persons/9b1e29dc-cd4b-4c60-b436-9093189cd2b4
+```
 4. Get persons by page:
-   `curl  http://localhost:8080/persons?page=0&size=100`
+```
+curl  http://localhost:8080/persons?page=0&size=100
+```
