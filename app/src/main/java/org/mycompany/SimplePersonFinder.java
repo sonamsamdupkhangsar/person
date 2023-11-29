@@ -4,7 +4,6 @@ import org.mycompany.db.repo.Person;
 import org.mycompany.db.repo.PersonRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
@@ -16,8 +15,12 @@ import java.util.UUID;
 @Service
 public class SimplePersonFinder implements PersonFinder {
     private static final Logger LOG = LoggerFactory.getLogger(SimplePersonFinder.class);
-    @Autowired
+
     private PersonRepository personRepository;
+
+    public SimplePersonFinder(PersonRepository personRepostiory) {
+        this.personRepository = personRepostiory;
+    }
 
     @Override
     public Mono<Person> getById(UUID id) {

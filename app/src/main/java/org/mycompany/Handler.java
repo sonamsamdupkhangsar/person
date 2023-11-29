@@ -2,7 +2,6 @@ package org.mycompany;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
@@ -10,7 +9,6 @@ import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Mono;
 
-import javax.print.attribute.standard.Media;
 import java.net.URI;
 import java.util.Map;
 import java.util.UUID;
@@ -20,8 +18,11 @@ public class Handler {
 
     private static final Logger LOG = LoggerFactory.getLogger(Handler.class);
 
-    @Autowired
     private PersonFinder personFinder;
+
+    public Handler(PersonFinder personFinder) {
+        this.personFinder = personFinder;
+    }
 
     public Mono<ServerResponse> getPerson(ServerRequest serverRequest) {
         LOG.info("get person by id");

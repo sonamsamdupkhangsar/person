@@ -16,7 +16,7 @@ curl -X POST http://localhost:8080/persons -H "Content-Type: application/json" -
 
 2. PUT to update the person by curl: 
 ```
-curl -X PUT http://localhost:8080/persons -H "Content-Type: application/json" -d '{"id": "9b1e29dc-cd4b-4c60-b436-9093189cd2b4", "firstName": "Tenzing", "lastName": "Lhamo"}'
+curl -X PUT http://localhost:8080/persons -H "Content-Type: application/json" -d '{"id": "5ac0c195-0f8a-480d-8bb2-789d6a01378d", "firstName": "Tenzing", "lastName": "Lhamo"}'
 ```
    
 
@@ -26,5 +26,5 @@ curl http://localhost:8080/persons/9b1e29dc-cd4b-4c60-b436-9093189cd2b4
 ```
 4. Get persons by page:
 ```
-curl  http://localhost:8080/persons?page=0&size=100
+curl  "http://localhost:8080/persons?page=0&size=100"
 ```

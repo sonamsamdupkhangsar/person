@@ -19,9 +19,9 @@ public class Router {
 
     @Bean
     public RouterFunction<ServerResponse> route(Handler handler) {
-        return RouterFunctions.route(GET("/persons/{id}").and(accept(MediaType.APPLICATION_JSON)), handler::getPerson)
+        return RouterFunctions.route(GET("/persons/{id}"), handler::getPerson)
         .andRoute(POST("/persons").and(accept(MediaType.APPLICATION_JSON)), handler::createNew)
                 .andRoute(PUT("/persons").and(accept(MediaType.APPLICATION_JSON)), handler::save)
-                .andRoute(GET("/persons").and(accept(MediaType.APPLICATION_JSON)), handler::getPageOfPeople);
+                .andRoute(GET("/persons"), handler::getPageOfPeople);
     }
 }
